@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ReadingProgress from '@/components/ReadingProgress';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
 export const metadata = {
@@ -10,6 +11,7 @@ export const metadata = {
 export default function Post() {
   return (
     <article className="min-h-screen bg-primary py-20 px-6">
+      <ReadingProgress />
       <div className="max-w-3xl mx-auto">
         <Link href="/blog" className="inline-flex items-center gap-2 text-accent text-sm mb-10 hover:gap-3 transition-all">
           <ArrowLeft size={16} /> Back to blog

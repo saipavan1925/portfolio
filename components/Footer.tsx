@@ -72,12 +72,12 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Sai Pavan Banala. Built with Next.js &amp; Tailwind CSS.
           </p>
-          <a
-            href="#"
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition"
           >
             Back to top <ArrowUp size={15} />
-          </a>
+          </button>
         </div>
       </div>
     </footer>

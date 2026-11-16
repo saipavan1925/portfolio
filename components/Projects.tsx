@@ -1,6 +1,8 @@
 'use client';
 
 import { Bot, Database, LineChart, CreditCard, Shuffle } from 'lucide-react';
+import { type MouseEvent } from 'react';
+import Reveal from './Reveal';
 
 const projects = [
   {
@@ -80,63 +82,73 @@ const projects = [
   },
 ];
 
+function handleSpotlight(e: MouseEvent<HTMLElement>) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+  e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 bg-primary">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center">
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">What I&apos;ve Built</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">Featured Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Five high-impact production systems at TD Bank — agentic AI migrations, credit risk analytics,
-            and large-scale on-prem-to-cloud portfolio migrations.
-          </p>
-        </div>
+        <Reveal>
+          <div className="mb-16 text-center">
+            <span className="text-accent text-sm font-semibold tracking-widest uppercase">What I&apos;ve Built</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">Featured Projects</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Five high-impact production systems at TD Bank — agentic AI migrations, credit risk analytics,
+              and large-scale on-prem-to-cloud portfolio migrations.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="space-y-8">
-          {projects.map((project) => {
+          {projects.map((project, i) => {
             const Icon = project.icon;
             return (
-              <article
-                key={project.title}
-                className="group bg-secondary/60 border border-white/5 rounded-2xl p-8 hover:border-accent/40 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/5"
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div
-                    className={`shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                  >
-                    <Icon size={26} className="text-white" />
-                  </div>
+              <Reveal key={project.title} delay={Math.min(i, 2) * 90}>
+                <article
+                  onMouseMove={handleSpotlight}
+                  className="spotlight-card group bg-secondary/60 border border-white/5 rounded-2xl p-8 hover:border-accent/40 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/5"
+                >
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div
+                      className={`shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}
+                    >
+                      <Icon size={26} className="text-white" />
+                    </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-1 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-accent2 font-medium mb-4">{project.role}</p>
-                    <p className="text-gray-300 leading-relaxed mb-6">{project.summary}</p>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-1 group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-accent2 font-medium mb-4">{project.role}</p>
+                      <p className="text-gray-300 leading-relaxed mb-6">{project.summary}</p>
 
-                    <ul className="space-y-2 mb-6">
-                      {project.impact.map((item) => (
-                        <li key={item} className="flex gap-3 text-gray-300 text-sm leading-relaxed">
-                          <span className="text-accent2 mt-1 shrink-0">▸</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      <ul className="space-y-2 mb-6">
+                        {project.impact.map((item) => (
+                          <li key={item} className="flex gap-3 text-gray-300 text-sm leading-relaxed">
+                            <span className="text-accent2 mt-1 shrink-0">▸</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-primary/80 text-gray-300 px-3 py-1 rounded-full text-xs border border-accent/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="bg-primary/80 text-gray-300 px-3 py-1 rounded-full text-xs border border-accent/20"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             );
           })}
         </div>

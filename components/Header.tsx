@@ -31,11 +31,11 @@ export default function Header() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="absolute top-16 left-0 right-0 bg-secondary border-b border-secondary p-6 flex flex-col gap-4 md:hidden">
-            <Link href="#projects" className="text-light hover:text-accent">Projects</Link>
-            <Link href="#skills" className="text-light hover:text-accent">Skills</Link>
-            <Link href="#experience" className="text-light hover:text-accent">Experience</Link>
-            <Link href="/blog" className="text-light hover:text-accent">Blog</Link>
-            <a href="#contact" className="bg-accent text-white px-4 py-2 rounded-lg text-center">Contact</a>
+            <Link href="#projects" onClick={() => setIsOpen(false)} className="text-light hover:text-accent">Projects</Link>
+            <Link href="#skills" onClick={() => setIsOpen(false)} className="text-light hover:text-accent">Skills</Link>
+            <Link href="#experience" onClick={() => setIsOpen(false)} className="text-light hover:text-accent">Experience</Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)} className="text-light hover:text-accent">Blog</Link>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="bg-accent text-white px-4 py-2 rounded-lg text-center">Contact</a>
           </div>
         )}
       </nav>
