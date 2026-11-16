@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "npm run build"
+    "export": "next build",
+    "deploy": "rm -rf out docs && next build && mv out docs"
   },
   "dependencies": {
     "react": "^18.2.0",
