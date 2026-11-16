@@ -56,11 +56,17 @@ export default function Hero() {
           <span className="text-accent text-sm font-semibold tracking-widest uppercase">Welcome to my portfolio</span>
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Senior Data Engineer<br />
-          <span className="bg-gradient-accent bg-clip-text text-transparent animate-gradient-x">
-            Building {typed}
+          Senior Data Engineer
+          {/* Fixed-height slot for the typewriter: reserves the maximum
+              lines the longest phrase can wrap to (3 on phones, 2 from sm up,
+              at leading-tight = 1.25em per line) so the content below the
+              hero never shifts while text types and deletes. */}
+          <span className="block min-h-[3.75em] sm:min-h-[2.5em]">
+            <span className="bg-gradient-accent bg-clip-text text-transparent animate-gradient-x">
+              Building {typed}
+            </span>
+            <span className="type-caret" aria-hidden="true" />
           </span>
-          <span className="type-caret" aria-hidden="true" />
         </h1>
         <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
           5+ years designing and delivering production-grade data platforms on Azure & AWS. Specialized in Databricks, Agentic AI, and large-scale migrations processing millions of records daily.
