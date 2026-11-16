@@ -21,7 +21,7 @@ export default function CTA() {
             <Mail size={20} /> Email Me
           </a>
           <a
-            href="https://linkedin.com/in/sai-pavan-banala"
+            href="https://www.linkedin.com/in/saipavanbanala/"
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-3.5 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
@@ -67,7 +67,7 @@ export default function CTA() {
             <Github size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/sai-pavan-banala"
+            href="https://www.linkedin.com/in/saipavanbanala/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-secondary hover:bg-accent p-3 rounded-full transition transform hover:scale-110"

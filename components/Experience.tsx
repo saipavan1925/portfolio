@@ -7,7 +7,7 @@ const roles = [
     title: 'Senior Software Engineer (Data Engineering)',
     company: 'TD Bank | Hexaware Technologies',
     location: 'New Jersey',
-    period: 'July 2026 – Present',
+    period: 'Jul 2026 – Present',
     current: true,
     points: [
       'Delivered 5 high-impact projects spanning agentic AI-driven migrations, credit risk analytics engineering, and two large-scale on-prem-to-cloud credit card portfolio migrations for Fortune 500 retail co-brand portfolios.',
@@ -19,7 +19,7 @@ const roles = [
     title: 'Software Engineer (Data Engineering)',
     company: 'TD Bank | Hexaware Technologies',
     location: 'New Jersey',
-    period: 'July 2024 – June 2026',
+    period: 'Jul 2024 – Jun 2026',
     current: false,
     points: [
       'Built an agentic AI accelerator that autonomously converted 90 legacy SQL stored procedures and 20 Alteryx workflows to Databricks-ready Spark SQL at 95% conversion confidence.',
@@ -32,7 +32,7 @@ const roles = [
     title: 'Senior Systems Engineer',
     company: 'Infosys Ltd',
     location: 'India',
-    period: 'August 2021 – June 2022',
+    period: 'Aug 2021 – Jun 2022',
     current: false,
     points: [
       'Reduced data processing errors by 50% by re-engineering PySpark ETL pipelines with automated validation, monitoring, and alerting for supply-chain forecasting models.',
@@ -45,7 +45,7 @@ const roles = [
     title: 'Systems Engineer',
     company: 'Infosys Ltd',
     location: 'India',
-    period: 'September 2019 – August 2021',
+    period: 'Sep 2019 – Aug 2021',
     current: false,
     points: [
       'Built secure automated ingestion frameworks for encrypted enterprise sources (SFTP/FTP), onboarding millions of records daily under enterprise security and compliance requirements.',
@@ -69,16 +69,16 @@ export default function Experience() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 md:left-[7.5rem] top-2 bottom-2 w-px bg-gradient-to-b from-accent via-accent2 to-transparent hidden md:block" />
+          <div className="absolute left-0 md:left-[10rem] top-2 bottom-2 w-px bg-gradient-to-b from-accent via-accent2 to-transparent hidden md:block" />
 
           <div className="space-y-10">
             {roles.map((role) => (
               <div key={role.title + role.period} className="md:flex md:gap-8 relative">
-                <div className="md:w-28 shrink-0 md:text-right pt-1">
-                  <span className="text-xs font-semibold text-accent2 whitespace-nowrap">{role.period}</span>
+                <div className="md:w-36 shrink-0 md:text-right pt-1">
+                  <span className="text-xs font-semibold text-accent2 leading-relaxed">{role.period}</span>
                 </div>
 
-                <div className="hidden md:block absolute left-[7.5rem] top-2 -translate-x-1/2">
+                <div className="hidden md:block absolute left-[10rem] top-2 -translate-x-1/2">
                   <span
                     className={`block w-3 h-3 rounded-full ring-4 ring-primary ${
                       role.current ? 'bg-accent2 animate-pulse' : 'bg-accent'
@@ -86,7 +86,7 @@ export default function Experience() {
                   />
                 </div>
 
-                <div className="flex-1 bg-secondary/60 border border-white/5 rounded-2xl p-6 hover:border-accent/40 transition-all duration-300 md:ml-4">
+                <div className="flex-1 bg-secondary/60 border border-white/5 rounded-2xl p-6 hover:border-accent/40 transition-all duration-300">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
                     <Briefcase size={18} className="text-accent" />
                     <h3 className="text-xl font-bold">{role.title}</h3>
@@ -96,7 +96,7 @@ export default function Experience() {
                       </span>
                     )}
                   </div>
-                  <p className="text-gray-400 text-sm mb-5 flex items-center gap-2">
+                  <p className="text-gray-400 text-sm mb-5 flex flex-wrap items-center gap-x-2 gap-y-1">
                     {role.company}
                     <span className="text-gray-600">·</span>
                     <MapPin size={13} /> {role.location}

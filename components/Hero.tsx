@@ -27,7 +27,7 @@ export default function Hero() {
           <a href="https://github.com/saipavan1925" target="_blank" rel="noopener noreferrer" className="bg-secondary hover:bg-accent p-3 rounded-full transition transform hover:scale-110" title="GitHub">
             <Github size={24} />
           </a>
-          <a href="https://linkedin.com/in/sai-pavan-banala" target="_blank" rel="noopener noreferrer" className="bg-secondary hover:bg-accent p-3 rounded-full transition transform hover:scale-110" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/saipavanbanala/" target="_blank" rel="noopener noreferrer" className="bg-secondary hover:bg-accent p-3 rounded-full transition transform hover:scale-110" title="LinkedIn">
             <Linkedin size={24} />
           </a>
           <a href="mailto:bsaipavan98@gmail.com" className="bg-secondary hover:bg-accent p-3 rounded-full transition transform hover:scale-110" title="Email">
